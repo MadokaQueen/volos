@@ -1,29 +1,36 @@
-import React, { Component } from 'react';
-import AppNavbar from './components/AppNavbar';
-import ShoppingList from './components/ShoppingList';
-import ItemModal from './components/ItemModal';
-import { Container } from 'reactstrap';
+import React, { Component } from "react";
+import "./App.css";
 
-import { Provider } from 'react-redux';
-import store from './store';
+import AppNavbar from "./components/AppNavbar/AppNavbar";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import MainPage from "./components/MainPage/MainPage";
+import Catalogue from "./components/Catalogue/Catalogue";
+import CarPage from "./components/CarPage/CarPage";
+
+import Locations from "./components/locations/Locations";
+
+import AppFooter from "./components/AppFooter/AppFooter";
+
+import { Route, Switch } from "react-router-dom";
 
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <div className="App">
-          <AppNavbar />
-          <Container>
-            <ItemModal />
-            <ShoppingList />
-          </Container>
-        </div>
-      </Provider>
+      <React.Fragment>
+        <AppNavbar />
+        <Switch>
+          <Route exact path="/" render={props => <MainPage />} />
+          <Route exact path="/catalogue" render={props => <Catalogue />} />
+          <Route
+            exact
+            path="/info/:adress"
+            render={props => <CarPage adress={props} />}
+          />
+          <Route exact path="/locations" render={props => <Locations />} />
+        </Switch>
+        <AppFooter />
+      </React.Fragment>
     );
   }
 }
-
 export default App;

@@ -1,0 +1,40 @@
+.car-card {
+  border: 1px solid #1565c0;
+}
+.car-card-top {
+  padding: 1rem;
+}
+.car-img {
+  width: 100%;
+  padding-bottom: 1rem;
+}
+.car-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+}
+.car-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.smallsmall {
+  font-size: 65%;
+}
+.car-card-bottom {
+  padding: 1rem;
+  color: white;
+}
+
+.col-deck {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media (max-width: 992px) {
+  .col-deck {
+    flex-direction: column;
+  }
+}

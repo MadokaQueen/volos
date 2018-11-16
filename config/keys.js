@@ -1,3 +1,3 @@
 module.exports = {
-  mongoURI: 'mongodb://YOUR_MONGO_URI'
+  mongoURI: "mongodb://main:4nUGhViAZLh4zVZ@ds131743.mlab.com:31743/monosp"
 };
